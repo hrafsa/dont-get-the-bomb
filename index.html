@@ -8,31 +8,18 @@
   <link rel="stylesheet" href="src/css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .box {
-      width: 50px;
-      height: 50px;
-      border: 1px solid #000;
-      display: inline-block;
-      text-align: center;
-      line-height: 50px;
-      cursor: pointer;
-      margin: 2px;
-    }
 
-    .box.disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
   </style>
 </head>
 
 <body>
-  <div class="bg-indigo-500 h-screen flex">
-    <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 flex items-center justify-center lg:justify-start">
+  <div class="bg-indigo-500 h-screen flex relative items-center justify-between">
+    <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 flex items-center justify-center lg:justify-between">
       <div class="mx-auto max-w-md text-center lg:flex-auto lg:py-32 lg:text-center lg:pr-12">
         <h2 class="text-3xl font-bold tracking-tight text-dark sm:text-6xl">Don't Get The Bomb</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-300">Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
-          Malesuada adipiscing sagittis vel nulla.</p>
+        <p class="mt-6 text-lg leading-8 text-gray-300">is a game where players pick numbers from 1 to 100. Somewhere in
+          those numbers, there's a bomb hidden. Players take turns picking numbers, trying not to choose the bomb. If
+          someone picks the bomb, they lose. It's all about luck and strategy to avoid the explosive surprise!</p>
         <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-center">
           <a href="#boxes"
             class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Start</a>
@@ -40,18 +27,25 @@
               aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div>
-        <img src="src/img/bomb.png" alt="">
+      <div class="mx-auto">
+        <img class="bounce" src="src/img/bomb.png" alt="">
       </div>
     </div>
   </div>
-  <div class="h-screen">
-    <div id="boxes" class="grid grid-cols-10 grid-flow-row">
-
+  <div>
+    <div id="boxes" class="grid grid-cols-10 ">
     </div>
   </div>
   <div id="result"></div>
-  <button onclick="resetGame()">Reset Game</button>
+  <div class="flex justify-center">
+    <button onclick="resetGame()"
+      class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+      <span
+        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        Purple to blue
+      </span>
+    </button>
+  </div>
   <script src="src/js/script.js"></script>
 </body>
 

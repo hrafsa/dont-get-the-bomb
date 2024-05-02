@@ -8,17 +8,28 @@ function generateBombPosition() {
 
 // Function to initialize the game
 function initializeGame() {
-    let boxesDiv = document.getElementById('boxes');
-    for (let i = 1; i <= 100; i++) {
-        let box = document.createElement('div');
-        box.className = 'box';
-        box.textContent = i;
-        box.addEventListener('click', function() {
-            openBox(i);
-        });
-        boxesDiv.appendChild(box);
-    }
-    generateBombPosition();
+  let boxesDiv = document.getElementById('boxes');
+  for (let i = 1; i <= 100; i++) {
+      let box = document.createElement('div');
+      box.className = 'box';
+
+      let image = document.createElement('img');
+      image.src = 'src/img/chest.png';
+      image.alt = 'Chest';
+
+      let h3 = document.createElement('h3');
+      h3.className = 'text-sm text-gray-700 text-center';
+      h3.textContent = i;
+
+      box.appendChild(image);
+      box.appendChild(h3);
+      
+      box.addEventListener('click', function() {
+          openBox(i);
+      });
+      boxesDiv.appendChild(box);
+  }
+  generateBombPosition();
 }
 
 // Function to handle box click event
